@@ -1,0 +1,21 @@
+{% extends './layout.html' %}
+{% block content %}
+
+<form method='POST'>
+  <input name='firstName' placeholder='First Name'/>
+  <input name='lastName' placeholder='Last Name'/>
+  <input name='nicknames' placeholder='Nick names'/>
+  <button class='btn btn-outline-primary'>Create A New Employee</button>
+</form>
+<br>
+  {% for employee in employee %}
+ <a class='btn btn-primary'href='/employees/{{employee.id}}'>{{employee.firstName}} {{employee.lastName}}
+  {%if employee.nicknames.length > 0 %} <span class="badge badge-secondary">
+  {{employee.nicknames.length}} Nickname{% if employee.nicknames.length > 1 %}s 
+  {%endif%}
+  {%endif%}</span>
+  </a>
+  <br>
+  <br>
+  {% endfor %}
+{% endblock %}

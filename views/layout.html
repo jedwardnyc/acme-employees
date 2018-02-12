@@ -1,0 +1,36 @@
+<head>
+  <title>ACME Sequelize Project</title>
+  <link rel='stylesheet' href='/vendor/bootstrap/dist/css/bootstrap.css' />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+  <link rel='stylesheet' href='vendor/style.css'>
+</head>
+<body>
+  <div class='container'>
+    <h1>{{title}}</h1>
+    <ul class='nav nav-tabs' style='margin-bottom: 10px'>
+      <li class='nav-item'>
+        <a href='/' class='nav-link{% if path==='/'%} active{%endif%}'>
+          Home
+        </a>
+      </li>
+      <li class='nav-item'>
+        <a href='/employees' class='nav-link{% if path==='/employees'%} active{%endif%}'>
+          Employees
+        </a>
+      </li>
+    </ul>
+    <p>Welcome to our company homepage! We have 
+    <span class="badge badge-secondary"> {{employeeCount}} </span> employees who have 
+    <span class="badge badge-secondary"> {{nicknameCount}} </span> nicknames </p>
+    {%if err%}
+    <div class='container' id='error-handler'>
+      <h3>Oh no! You got an error! Here it is:</h3> 
+      <br>
+      <p>{{err}}</p>
+    </div>
+    {%endif%}
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>

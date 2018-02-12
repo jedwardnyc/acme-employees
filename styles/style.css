@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto:500', sans-serif;
+}
+
+#error-handler{
+  background-color:lightcoral; 
+  padding:1.5em; 
+  opacity: 1.5;
+  border-radius: 1em 1em;
+}
